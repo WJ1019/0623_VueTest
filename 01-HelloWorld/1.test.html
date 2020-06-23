@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="test">
+    <input type="text" v-model="msg">
+    <p>Hello {{msg}}</p>
+  </div>
+  <p id="test2">{{msg}}</p>
+
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript">
+    const vue = new Vue({  // 配置对象: 属性名是一些特定的名称   每个属性就是一个选项
+      el: '#test', // 选择器字符串 ==> 用于指定模板的根元素
+      data: {      // 包含一些数据属性的对象 ==> 为模板提供数据
+        msg: 'atguigu'
+      }
+    })
+
+    setTimeout(() => {
+      vue.msg = 'wj'  // 数据代理
+    }, 1500);
+
+
+    new Vue({
+      el: '#test2',
+      data: {
+        msg: 'lala'
+      }
+    })
+  </script>
+</body>
+</html>

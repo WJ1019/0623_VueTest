@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h2>1.插值(双大括号表达式) </h2>
+    <p>---{{msg}}----</p>
+    <p>---{{msg.toUpperCase()}}----</p>
+
+    <h2>2. 指令一: 强制数据绑定</h2>  <!-- 属性值是一个动态值 -->
+    <a v-bind:href="url">去学习</a>
+    <a :href="url">去学习</a>
+
+    <h2>3. 指令二: 绑定事件监听</h2>
+    <button v-on:click='test'>test1</button>
+    <button @click='test'>按钮2</button>
+
+  </div>
+
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        msg: 'I will back',
+        url: 'http://www.atguigu.com'
+      },
+      methods: {
+        test (e){
+          alert(e.target.innerText)
+        }
+      },
+    })
+  </script>
+</body>
+</html>
